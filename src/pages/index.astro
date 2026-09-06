@@ -1,9 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-// Đọc thông tin kết nối Supabase từ biến môi trường
-const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL || '';
-const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY || '';
+// Đọc thông tin kết nối Supabase từ biến môi trường (kèm fallback an toàn)
+const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL || 'https://fkilmtcjyommdbtogmeo.supabase.co';
+const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY || 'sb_publishable_yn5gGSPs2UlfGpItdWsrmw_ka8Nz3d-';
 ---
 
 <Layout title="Capcat Kiosk | Cửa Hàng Tiếp Thị Liên Kết 🐾">
@@ -220,8 +220,8 @@ const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY || '';
     // 2. Hiển thị Viewer Page
     if (viewerView) viewerView.classList.remove('hidden');
 
-    const supabaseUrl = window.PUBLIC_SUPABASE_URL || '';
-    const supabaseAnonKey = window.PUBLIC_SUPABASE_ANON_KEY || '';
+    const supabaseUrl = window.PUBLIC_SUPABASE_URL || 'https://fkilmtcjyommdbtogmeo.supabase.co';
+    const supabaseAnonKey = window.PUBLIC_SUPABASE_ANON_KEY || 'sb_publishable_yn5gGSPs2UlfGpItdWsrmw_ka8Nz3d-';
 
     if (!supabaseUrl || !supabaseAnonKey) {
       console.error('Thiếu cấu hình kết nối Supabase.');
